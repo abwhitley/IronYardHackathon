@@ -13,14 +13,17 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailLoginTextField: UITextField!
     @IBOutlet var passwordLoginTextField: UITextField!
     
-    var storeUserLogin = UserLogin(email: "", password: "")
-    @IBAction func loginUserButton(_ sender: UIButton) throws{
+    var storeUserLogin = UserLogin(email: "", password: "", userID: nil)
+    @IBAction func loginUserButton(_ sender: UIButton) {
         
         storeUserLogin.email = self.emailLoginTextField.text!
         storeUserLogin.password = self.passwordLoginTextField.text!
         let session = URLSession.shared
-        let baseURL = "http://192.168.85.184"
-        let url: URL = URL(string: "\(baseURL)\(Method.Login.rawValue)")!
+        
+        let api = HackathonAPI()
+        
+        //let baseURL = "http://192.168.85.184"
+        let url: URL = api.meetUpURL(method: .Login)
         var urlrequest: URLRequest = URLRequest.init(url: url)
         urlrequest.httpMethod = "POST"
         urlrequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -30,7 +33,6 @@ class LoginViewController: UIViewController {
         do{
             
             urlrequest.httpBody = try JSONSerialization.data(withJSONObject: emailPassword, options: [])
-            print ("\n\n\n\n\(urlrequest.value(forHTTPHeaderField: "password"))\n\n\n")
             let task = session.dataTask(with: urlrequest)  { (data: Data?, response: URLResponse?, error: Error?) in
                 
                 if data != nil {
@@ -39,8 +41,8 @@ class LoginViewController: UIViewController {
                 
             }
             task.resume()
-        }catch let error{
-            throw error
+        }catch{
+             print("somthing went wrong")
         }
 
         

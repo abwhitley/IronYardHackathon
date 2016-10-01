@@ -5,7 +5,7 @@
 //  Created by Austins Work on 9/30/16.
 //  Copyright © 2016 AustinsIronYard. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class RegisterViewController: UIViewController {
@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var comfirmPasswordTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
 
-    var storeUser = User(firstName: "", lastName: "", email: "", password: "")
+    var storeUser = User(firstName: "", lastName: "", email: "", password: "", userID: nil)
     @IBAction func finishedInputButton(_ sender: UIButton) {
         
         storeUser.firstName = self.firstNameTextField.text!
@@ -36,16 +36,19 @@ class RegisterViewController: UIViewController {
         print(c)
         print(d)
         
+        let api = HackathonAPI()
+        
         
         let session = URLSession.shared
-        let baseURL = "https://192.168.86.199"
-        let url: URL = URL(string: "\(baseURL)\(Method.Register.rawValue)")!
+        
+        //let baseURL = "http://192.168.85.184"
+        
+        let url: URL = api.meetUpURL(method: .Register)
         var urlrequest: URLRequest = URLRequest.init(url: url)
         urlrequest.httpMethod = "POST"
         urlrequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlrequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let registerUser : [String:String] = ["firstName":storeUser.firstName,"lastName":storeUser.lastName,"email": storeUser.email, "password": storeUser.password]
+        let registerUser : [String:String] = ["email": storeUser.email,"firstName":storeUser.firstName,"lastName":storeUser.lastName,"password": storeUser.password]
         do{
             
             urlrequest.httpBody = try JSONSerialization.data(withJSONObject: registerUser, options: [])
@@ -59,6 +62,8 @@ class RegisterViewController: UIViewController {
                 
             }
             task.resume()
+            //print(HackathonAPI.userIDFromJSONData(task))
+
         }catch{
             print("somthing wentwrong")
         }

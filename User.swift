@@ -15,12 +15,14 @@ class User {
     var lastName : String
     var email : String
     var password : String
+    var userID : Int?
     
-    init(firstName:String, lastName:String, email:String, password:String) {
+    init(firstName:String, lastName:String, email:String, password:String, userID: Int?) {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.password = password
+        self.userID = userID
     }
     
 }
@@ -28,9 +30,11 @@ class User {
 class UserLogin{
     var email : String
     var password: String
+    var userID: Int?
     
-    init(email:String, password:String) {
+    init(email:String, password:String, userID: Int?) {
         self.email = email
         self.password = password
+        self.userID = userID
     }
 }
