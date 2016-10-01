@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E98134FB1D9ED9E0008808D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98134FA1D9ED9E0008808D8 /* AppDelegate.swift */; };
-		E98134FD1D9ED9E0008808D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98134FC1D9ED9E0008808D8 /* ViewController.swift */; };
+		E98134FD1D9ED9E0008808D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98134FC1D9ED9E0008808D8 /* LoginViewController.swift */; };
 		E98135001D9ED9E0008808D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98134FE1D9ED9E0008808D8 /* Main.storyboard */; };
 		E98135021D9ED9E0008808D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98135011D9ED9E0008808D8 /* Assets.xcassets */; };
 		E98135051D9ED9E0008808D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98135031D9ED9E0008808D8 /* LaunchScreen.storyboard */; };
 		E98135101D9ED9E0008808D8 /* HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981350F1D9ED9E0008808D8 /* HackathonTests.swift */; };
 		E981351B1D9ED9E0008808D8 /* HackathonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981351A1D9ED9E0008808D8 /* HackathonUITests.swift */; };
+		E98135291D9ED9F2008808D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98135281D9ED9F2008808D8 /* User.swift */; };
+		E981352B1D9EDCF6008808D8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981352A1D9EDCF6008808D8 /* RegisterViewController.swift */; };
+		E981352D1D9EEBCF008808D8 /* HackathonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981352C1D9EEBCF008808D8 /* HackathonAPI.swift */; };
+		E981352F1D9EF7CB008808D8 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E981352E1D9EF7CB008808D8 /* UserStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		E98134F71D9ED9E0008808D8 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98134FA1D9ED9E0008808D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E98134FC1D9ED9E0008808D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E98134FC1D9ED9E0008808D8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E98134FF1D9ED9E0008808D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E98135011D9ED9E0008808D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E98135041D9ED9E0008808D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		E98135161D9ED9E0008808D8 /* HackathonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackathonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E981351A1D9ED9E0008808D8 /* HackathonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonUITests.swift; sourceTree = "<group>"; };
 		E981351C1D9ED9E0008808D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98135281D9ED9F2008808D8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
+		E981352A1D9EDCF6008808D8 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		E981352C1D9EEBCF008808D8 /* HackathonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonAPI.swift; sourceTree = "<group>"; };
+		E981352E1D9EF7CB008808D8 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +105,12 @@
 		E98134F91D9ED9E0008808D8 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				E98135281D9ED9F2008808D8 /* User.swift */,
+				E981352E1D9EF7CB008808D8 /* UserStore.swift */,
 				E98134FA1D9ED9E0008808D8 /* AppDelegate.swift */,
-				E98134FC1D9ED9E0008808D8 /* ViewController.swift */,
+				E981352C1D9EEBCF008808D8 /* HackathonAPI.swift */,
+				E98134FC1D9ED9E0008808D8 /* LoginViewController.swift */,
+				E981352A1D9EDCF6008808D8 /* RegisterViewController.swift */,
 				E98134FE1D9ED9E0008808D8 /* Main.storyboard */,
 				E98135011D9ED9E0008808D8 /* Assets.xcassets */,
 				E98135031D9ED9E0008808D8 /* LaunchScreen.storyboard */,
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E98134FD1D9ED9E0008808D8 /* ViewController.swift in Sources */,
+				E981352F1D9EF7CB008808D8 /* UserStore.swift in Sources */,
+				E98134FD1D9ED9E0008808D8 /* LoginViewController.swift in Sources */,
 				E98134FB1D9ED9E0008808D8 /* AppDelegate.swift in Sources */,
+				E98135291D9ED9F2008808D8 /* User.swift in Sources */,
+				E981352B1D9EDCF6008808D8 /* RegisterViewController.swift in Sources */,
+				E981352D1D9EEBCF008808D8 /* HackathonAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
